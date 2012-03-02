@@ -5,6 +5,14 @@
   <%= @user.name %>
 </p>
 
+<p>
+  <b><%= @user.name %>さんのつぶやき</b>
+  <ul>
+    <% @tweets.each do |tweet| -%>
+      <li><%= tweet.body %></li>
+    <% end -%>
+  </ul>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
