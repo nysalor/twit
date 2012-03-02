@@ -22,6 +22,14 @@ class UsersController < ApplicationController
     end
   end
 
+  # POST /users/1/tweet
+  def tweet
+    @user = User.find(params[:id])
+    @tweet = @user.tweets.create(:body => params[:body])
+
+    redirect_to @user, notice: 'Tweet was successfully updated.'
+  end
+
   # GET /users/new
   # GET /users/new.json
   def new

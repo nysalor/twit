@@ -14,5 +14,12 @@
   </ul>
 </p>
 
+<p>
+  <%= form_tag user_tweet_path do %>
+    今何してる？:<%= text_field_tag :body %>
+    <%= submit_tag %>
+  <% end -%>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

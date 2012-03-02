@@ -1,5 +1,8 @@
 Twit::Application.routes.draw do
+  match '/user/:id/tweet' => 'users#tweet', :as => :user_tweet
+
   resources :users
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
