@@ -27,8 +27,7 @@ class UsersController < ApplicationController
   def tweet
     @user = User.find(params[:id])
     @user.tweet!(params[:body])
-
-    redirect_to @user, notice: 'Tweet was successfully updated.'
+    @tweets = @user.tweets.newer
   end
 
   # GET /users/new

@@ -13,7 +13,7 @@
 </p>
 
 <p>
-  <%= form_tag user_tweet_path do %>
+  <%= form_tag(user_tweet_path, :remote => true) do %>
     今何してる？:<%= text_field_tag :body %>
     <%= submit_tag %>
   <% end -%>
