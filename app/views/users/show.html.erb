@@ -9,7 +9,7 @@
   <b><%= @user.name %>さんのつぶやき</b>
   <ul>
     <% @tweets.each do |tweet| -%>
-      <li><%= tweet.body %></li>
+      <li><%= tweet.body %> (<%= tweet.created_at %>)</li>
     <% end -%>
   </ul>
 </p>
