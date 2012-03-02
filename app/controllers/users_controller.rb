@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-    @tweets = Tweet.order('created_at DESC').all
+    @tweets = Tweet.newer.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    @tweets = @user.tweets.order('created_at DESC')
+    @tweets = @user.tweets.newer
 
     respond_to do |format|
       format.html # show.html.erb
