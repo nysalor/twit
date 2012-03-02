@@ -18,6 +18,14 @@
 <% end %>
 </table>
 
+<p>
+  <ul>
+    <% @tweets.each do |tweet| -%>
+      <li><%= tweet.user.name %>さん:<%= tweet.body %> (<%= tweet.created_at.strftime("%Y-%m-%d %H:%M:%S") %>)</li>
+    <% end -%>
+  </ul>
+</p>
+
 <br />
 
 <%= link_to 'New User', new_user_path %>

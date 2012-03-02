@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @tweets = Tweet.order('created_at DESC').all
 
     respond_to do |format|
       format.html # index.html.erb
